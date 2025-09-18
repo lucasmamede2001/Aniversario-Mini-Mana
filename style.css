@@ -1,0 +1,194 @@
+/* Importe uma fonte legal para o site, se quiser */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+    background-color: #f7e9f3;
+    /* Cor de fundo suave */
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    overflow: hidden;
+    /* Evita a barra de rolagem lateral */
+    color: #4b3d3d;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* Alinha itens em coluna */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Garante que ocupa a altura total da tela */
+}
+
+.container {
+    padding: 20px;
+    z-index: 10;
+    width: 90%;
+    /* Largura para o container principal */
+    max-width: 800px;
+    /* Limite de largura para não ficar muito grande */
+}
+
+.titulo {
+    font-size: 3em;
+    color: #d14a79;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.bolo-container {
+    position: relative;
+    display: inline-block;
+    /* Permite que o container se ajuste ao tamanho do bolo */
+    margin: 0;
+}
+
+.bolo {
+    width: 300px;
+    /* Ajuste o tamanho do bolo */
+    height: auto;
+    display: block;
+    /* Remove espaço extra abaixo da imagem */
+    margin: 0 auto;
+    /* Centraliza o bolo */
+    animation: bounce 2s infinite ease-in-out;
+}
+
+.velas-container {
+    /* Renomeado de .velas para .velas-container */
+    position: absolute;
+    top: -30px;
+    /* Ajuste a posição vertical das velas acima do bolo */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    /* Espaço entre as velas */
+    width: 100%;
+    /* Ocupa a largura do bolo-container */
+}
+
+.vela {
+    width: 40px;
+    /* Ajuste o tamanho da vela */
+    height: auto;
+    display: block;
+}
+
+.mensagem-principal {
+    font-size: 1.5em;
+    color: #6a4c4c;
+    margin-top: 30px;
+}
+
+/* Estilos para os balões */
+.baloes-container {
+    position: fixed;
+    /* Fixa os balões na tela, mesmo que o conteúdo role */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Ocupa a altura total para os balões subirem */
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.balao {
+    position: absolute;
+    width: 100px;
+    /* Ajuste o tamanho do balão */
+    height: auto;
+    cursor: pointer;
+    pointer-events: auto;
+    /* Reativa o clique */
+    animation: subirBalao 30s linear infinite;
+    z-index: 6;
+    /* Garante que o balão esteja acima do container principal */
+}
+
+.balao img {
+    /* Estiliza a imagem dentro do balão */
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.balao:hover .mensagem {
+    display: block;
+    animation: mostrarMensagem 0.5s forwards;
+}
+
+.mensagem {
+    display: none;
+    position: absolute;
+    bottom: 110%;
+    /* Posiciona a mensagem um pouco acima do balão */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 2px solid #d14a79;
+    border-radius: 10px;
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    font-size: 1em;
+    color: #4b3d3d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    white-space: pre-wrap;
+    animation: none;
+    pointer-events: auto;
+    /* Permite interagir com a mensagem */
+    z-index: 7;
+    /* Garante que a mensagem esteja acima do balão */
+}
+
+/* Animações */
+@keyframes subirBalao {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    /* Começa a aparecer mais cedo */
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-150px);
+        /* Balões sobem mais e giram */
+        opacity: 0;
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes mostrarMensagem {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 20px) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+    }
+}
