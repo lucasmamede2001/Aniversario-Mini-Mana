@@ -22,7 +22,7 @@ body {
 }
 
 .container {
-    padding: 20px;
+    padding: 5px;
     z-index: 10;
     width: 90%;
     /* Largura para o container principal */
@@ -34,7 +34,7 @@ body {
     font-size: 3em;
     color: #d14a79;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .bolo-container {
@@ -52,35 +52,14 @@ body {
     /* Remove espaço extra abaixo da imagem */
     margin: 0 auto;
     /* Centraliza o bolo */
-    animation: bounce 2s infinite ease-in-out;
+    animation: bounce 3s infinite ease-in-out;
 }
 
-.velas-container {
-    /* Renomeado de .velas para .velas-container */
-    position: absolute;
-    top: -30px;
-    /* Ajuste a posição vertical das velas acima do bolo */
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    /* Espaço entre as velas */
-    width: 100%;
-    /* Ocupa a largura do bolo-container */
-}
-
-.vela {
-    width: 40px;
-    /* Ajuste o tamanho da vela */
-    height: auto;
-    display: block;
-}
 
 .mensagem-principal {
     font-size: 1.5em;
     color: #6a4c4c;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 /* Estilos para os balões */
