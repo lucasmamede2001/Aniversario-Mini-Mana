@@ -6,7 +6,6 @@ body {
     /* Cor de fundo suave */
     font-family: 'Pacifico', cursive;
     text-align: center;
-    overflow: hidden;
     /* Evita a barra de rolagem lateral */
     color: #4b3d3d;
     margin: 0;
@@ -171,3 +170,4 @@ body {
         transform: translate(-50%, 0) scale(1);
     }
 }
+
